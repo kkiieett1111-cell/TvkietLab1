@@ -1,5 +1,10 @@
-﻿@model IEnumerable<TvkietLab1.Models.Student>
-<a asp-action="Create" class="btn btn-primary">Create Student</a>
+﻿@{
+    ViewData["Title"] = "Student List";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@model IEnumerable<TvkietLab1.Models.Student>
+<a asp-action="Create" class="btn btn-primary mb-3">Create Student</a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -47,3 +52,12 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        var table = document.querySelector("table");
+        table.onclick = function() {
+            table.style.backgroundColor = "yellow";
+        }
+    </script>
+}
